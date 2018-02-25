@@ -5,30 +5,6 @@
       "email": "wfm@mail.ru",
       "password": "12345678",
       "name": "Администратор"
-    },
-    {
-      "email": "nglova@gmail.com",
-      "password": "123456",
-      "name": "Nazariy",
-      "id": 2
-    },
-    {
-      "email": "samuel@ht26.com",
-      "password": "asdasdasd",
-      "name": "asdavsdvsadv",
-      "id": 3
-    },
-    {
-      "email": "anayda@ukrinsoft.net",
-      "password": "gdfgdfgdfgdfg",
-      "name": "dfgdfgdfgdfg",
-      "id": 4
-    },
-    {
-      "email": "nazarglova@gmail.com",
-      "password": "dasdasd",
-      "name": "asdasdasd",
-      "id": 5
     }
   ],
   "bill": {
