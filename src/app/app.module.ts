@@ -4,6 +4,7 @@ import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
+import {SystemModule} from './system/system.module';
 import {AuthModule} from './auth/auth.module';
 import {UsersService} from './shared/services/users.service';
 import {AuthService} from './shared/services/auth.service';
@@ -16,7 +17,8 @@ import {AuthService} from './shared/services/auth.service';
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
+    SystemModule
   ],
   providers: [AuthService, UsersService],
   bootstrap: [AppComponent]

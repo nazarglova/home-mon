@@ -54,10 +54,9 @@ export class LoginComponent implements OnInit {
         if (user) {
           if (user.password === formData.password) {
             this.message.text = '';
-            //logic
             this.autghService.login();
             window.localStorage.setItem('user', JSON.stringify(user));
-            // this.router.navigate([''])
+            this.router.navigate(['/system', 'bill']);
           } else {
             this.showMessage({
               text: 'Wrong Password!',
@@ -70,7 +69,6 @@ export class LoginComponent implements OnInit {
             type: 'danger'
           });
         }
-        console.log(user);
       });
   }
 }
