@@ -5,6 +5,12 @@
     </div>
   </div>
   <div class="card-block">
+    <div
+      class="alert alert-{{message.type}}"
+      *ngIf="message.text"
+    >
+      {{message.text}}
+    </div>
     <form #f="ngForm" (ngSubmit)="onSubmit(f)">
       <div
         class="form-group"
@@ -12,16 +18,16 @@
         <label
           class="control-label"
           for="e-select-category"
-        >Введите название
+        >Choose name
         </label>
         <select
-          id="e-select-category"
           class="form-control"
-          required
-          #eSelectCategory="ngModel"
-          name="eSelectCategory"
-          ngModel
+          id="e-select-category"
+          [(ngModel)]="currentCategoryId"
+          (change)="onCategoryChange()"
+          [ngModelOptions]="{standalone: true}"
         >
+          <!--[ngModelOptions]="{standalone:true}"-->
           <option
             *ngFor="let c of categories"
             [value]="c.id"
@@ -44,7 +50,7 @@
           required
           #name="ngModel"
           name="name"
-          ngModel
+          [ngModel]="currentCategory.name"
         >
         <span
           class="form-help-text"
@@ -63,7 +69,7 @@
           required
           name="capacity"
           #capacity="ngModel"
-          [ngModel]="1"
+          [ngModel]="currentCategory.capacity"
           min="1"
         >
         <span
@@ -74,7 +80,8 @@
       <button
         type="submit"
         class="btn btn-primary"
-      >Добавить
+        [disabled]="f.invalid"
+      >Change
       </button>
     </form>
   </div>
